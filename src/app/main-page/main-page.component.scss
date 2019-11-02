@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    margin: 20px auto;
+}
+
+
+.wrapper {
+    width: 100%;
+}
+
+.post-wrapper {
+    width: 50%;
+    border: 0;
+    border-radius: 6px;;
+    background-color: #555;
+    text-align: center;
+}
+
+.send-post-wrapper {
+    width: 50%;
+    text-align: center;
+}
+
+.post-txt {
+    width: 100%;
+    min-height: 50px;
+    background-color: grey;
+    border: 0;
+    border-radius: 6px;;
+    padding: 5px;
+}
+
+.post-txt:hover {
+    cursor: pointer;
+}
+
+.post-txt:focus {
+    cursor: text;
+}
+
+.post-sbmt-btn{
+    width: 100%;
+    border: 0;
+    border-radius: 6px;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.post-sbmt-btn:hover{
+    background-color: #555;
+    cursor: pointer;
+}

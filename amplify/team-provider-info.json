@@ -1,14 +1,19 @@
 {
-    "angulardev": {
+    "socialapp": {
         "awscloudformation": {
-            "AuthRoleName": "angular-test-app-angulardev-20191005171751-authRole",
-            "UnauthRoleArn": "arn:aws:iam::594166224220:role/angular-test-app-angulardev-20191005171751-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::594166224220:role/angular-test-app-angulardev-20191005171751-authRole",
+            "AuthRoleName": "socialapp-socialapp-20191018202942-authRole",
+            "UnauthRoleArn": "arn:aws:iam::594166224220:role/socialapp-socialapp-20191018202942-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::594166224220:role/socialapp-socialapp-20191018202942-authRole",
             "Region": "eu-central-1",
-            "DeploymentBucketName": "angular-test-app-angulardev-20191005171751-deployment",
-            "UnauthRoleName": "angular-test-app-angulardev-20191005171751-unauthRole",
-            "StackName": "angular-test-app-angulardev-20191005171751",
-            "StackId": "arn:aws:cloudformation:eu-central-1:594166224220:stack/angular-test-app-angulardev-20191005171751/4b433ae0-e783-11e9-ab06-0692890e48f0"
+            "DeploymentBucketName": "socialapp-socialapp-20191018202942-deployment",
+            "UnauthRoleName": "socialapp-socialapp-20191018202942-unauthRole",
+            "StackName": "socialapp-socialapp-20191018202942",
+            "StackId": "arn:aws:cloudformation:eu-central-1:594166224220:stack/socialapp-socialapp-20191018202942/40d10900-f1d5-11e9-b732-02722d612c06"
+        },
+        "categories": {
+            "auth": {
+                "socialappc9459514": {}
+            }
         }
     }
 }

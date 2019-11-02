@@ -1,0 +1,8 @@
+<div class="column wrapper" fxLayout="column wrap" fxLayoutAlign="space-around">
+        <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+                 <input class="column reg-el"  formControlName="email" type="email" placeholder="Email">
+                 <input class="column reg-el"  formControlName="pass" type="password" placeholder="Password">
+                 <button class="column reg-el" type="submit">Register</button>
+        </form>
+        <a routerLink="/login">Go to Login</a>
+</div>

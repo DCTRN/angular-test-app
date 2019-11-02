@@ -1,0 +1,6 @@
+<div class="column wrapper" fxLayout="column wrap" fxLayoutAlign="space-around">
+        <form [formGroup]="codeForm" (ngSubmit)="onCode()">
+                 <input class="column reg-el"  formControlName="code" type="text" placeholder="Confirmation Code">
+                 <button class="column reg-el" type="submit">Confirm</button>
+        </form>
+</div>

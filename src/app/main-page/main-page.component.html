@@ -1,0 +1,22 @@
+<nav-bar></nav-bar>
+<main>
+    <div class="column wrapper" fxLayout="column wrap" fxLayoutAlign="space-around center" >
+        <div class="column post-wrapper" >
+            <div class="column send-post-wrapper" >
+                    <form [formGroup]="postForm" (ngSubmit)="sendPost()">
+                            <textarea formControlName="postText" class="post-txt"></textarea>
+                            <button type="submit" class="post-sbmt-btn">Send</button>
+                    </form>
+            </div>
+            <h1>Posty</h1>
+            <div *ngFor="let post of posts" style="border: 3px solid white; margin: 10px; overflow-wrap: break-word;;" >
+                <h1>{{ post.user }}</h1>
+                <p>
+                    {{ post.date }}<br>
+                    {{ post.postText }}
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+

@@ -1,12 +1,12 @@
 {
-    "projectName": "angular-test-app",
+    "projectName": "socialApp",
     "version": "2.0",
     "frontend": "javascript",
     "javascript": {
         "framework": "angular",
         "config": {
             "SourceDir": "src",
-            "DistributionDir": "dist",
+            "DistributionDir": "dist/angular-test-app",
             "BuildCommand": "npm.cmd run-script build",
             "StartCommand": "ng serve"
         }

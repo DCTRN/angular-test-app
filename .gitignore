@@ -51,8 +51,8 @@ Thumbs.db
 #amplify/mock-data
 #amplify/backend/amplify-meta.json
 #amplify/backend/awscloudformation
-#build/
-#dist/
+build/
+dist/
 node_modules/
 #aws-exports.js
 #awsconfiguration.json

@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/posts",
+            "lambdaFunction": "postHandler",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "postAPI",
+    "apiName": "postAPI",
+    "functionArns": [
+        {
+            "lambdaFunction": "postHandler"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "socialapp-socialapp-20191018202942-authRole",
+        "unAuthRoleName": "socialapp-socialapp-20191018202942-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "postHandler",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "fa495798"
+}

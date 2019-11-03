@@ -1,0 +1,137 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "socialapp-socialapp-20191018202942-authRole",
+			"UnauthRoleArn": "arn:aws:iam::594166224220:role/socialapp-socialapp-20191018202942-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::594166224220:role/socialapp-socialapp-20191018202942-authRole",
+			"Region": "eu-central-1",
+			"DeploymentBucketName": "socialapp-socialapp-20191018202942-deployment",
+			"UnauthRoleName": "socialapp-socialapp-20191018202942-unauthRole",
+			"StackName": "socialapp-socialapp-20191018202942",
+			"StackId": "arn:aws:cloudformation:eu-central-1:594166224220:stack/socialapp-socialapp-20191018202942/40d10900-f1d5-11e9-b732-02722d612c06"
+		}
+	},
+	"auth": {
+		"socialappc9459514": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/socialapp-socialapp-20191018202942-deployment/amplify-cfn-templates/auth/socialappc9459514-cloudformation-template.yml",
+				"logicalId": "authsocialappc9459514"
+			},
+			"lastPushTimeStamp": "2019-10-19T13:10:54.865Z",
+			"output": {
+				"AppClientSecret": "qe52a17kcgdngjk2tkqqe53cbk4e6b7io8en6hdualcd2hjfbd5",
+				"UserPoolId": "eu-central-1_O7sVtTlSf",
+				"AppClientIDWeb": "6fou152bu1sqpkvgn0mfgal2i6",
+				"AppClientID": "1fhanjnkfsr1f9a95qiuq0ovu",
+				"IdentityPoolId": "eu-central-1:a273abf3-0d70-46aa-85fe-0c2e1a3569e1",
+				"IdentityPoolName": "socialappc9459514_identitypool_c9459514__socialapp",
+				"UserPoolName": "socialappc9459514_userpool_c9459514"
+			},
+			"lastPushDirHash": "r+zCJlgSEc9aoVZLklX1nQC4wyU="
+		}
+	},
+	"storage": {
+		"posts": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/socialapp-socialapp-20191018202942-deployment/amplify-cfn-templates/storage/posts-cloudformation-template.json",
+				"logicalId": "storageposts"
+			},
+			"lastPushTimeStamp": "2019-10-19T13:10:54.866Z",
+			"output": {
+				"PartitionKeyName": "user",
+				"SortKeyName": "date",
+				"SortKeyType": "S",
+				"Region": "eu-central-1",
+				"Arn": "arn:aws:dynamodb:eu-central-1:594166224220:table/posts-socialapp",
+				"StreamArn": "arn:aws:dynamodb:eu-central-1:594166224220:table/posts-socialapp/stream/2019-10-18T18:43:52.618",
+				"PartitionKeyType": "S",
+				"Name": "posts-socialapp"
+			},
+			"lastPushDirHash": "URgDFKcYVR14t4jVQEkTOrv8auA="
+		}
+	},
+	"function": {
+		"postHandler": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "posts",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			],
+			"lastBuildTimeStamp": "2019-10-18T18:43:25.124Z",
+			"lastPackageTimeStamp": "2019-10-19T08:04:41.220Z",
+			"distZipFilename": "postHandler-4d553066747a5a504e74-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/socialapp-socialapp-20191018202942-deployment/amplify-cfn-templates/function/postHandler-cloudformation-template.json",
+				"logicalId": "functionpostHandler"
+			},
+			"lastPushTimeStamp": "2019-10-19T13:10:54.868Z",
+			"output": {
+				"Region": "eu-central-1",
+				"Arn": "arn:aws:lambda:eu-central-1:594166224220:function:postHandler-socialapp",
+				"Name": "postHandler-socialapp",
+				"LambdaExecutionRole": "socialappLambdaRolecc42decc-socialapp"
+			},
+			"lastPushDirHash": "UFBikJOZ9Kj8KeqmuRaQD5rolnA="
+		}
+	},
+	"api": {
+		"postAPI": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "postHandler",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/socialapp-socialapp-20191018202942-deployment/amplify-cfn-templates/api/postAPI-cloudformation-template.json",
+				"logicalId": "apipostAPI"
+			},
+			"lastPushTimeStamp": "2019-10-19T13:10:54.876Z",
+			"output": {
+				"ApiName": "postAPI",
+				"RootUrl": "https://4ukwqzy8yl.execute-api.eu-central-1.amazonaws.com/socialapp"
+			},
+			"lastPushDirHash": "5GkKrEAQRkl8TWjF+WTlDk0D6MA="
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/socialapp-socialapp-20191018202942-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2019-10-19T13:10:54.872Z",
+			"output": {
+				"CloudFrontSecureURL": "https://dk4obxuby5cdg.cloudfront.net",
+				"S3BucketSecureURL": "https://socialpp-20191018213613-hostingbucket-socialapp.s3.amazonaws.com",
+				"WebsiteURL": "http://socialpp-20191018213613-hostingbucket-socialapp.s3-website.eu-central-1.amazonaws.com",
+				"CloudFrontDistributionID": "E1CVQLVTCBOZ1O",
+				"Region": "eu-central-1",
+				"HostingBucketName": "socialpp-20191018213613-hostingbucket-socialapp",
+				"CloudFrontDomainName": "dk4obxuby5cdg.cloudfront.net"
+			},
+			"lastPushDirHash": "IC2i4hDM+JZwKHUzeN8RpIzwZy8="
+		}
+	}
+}

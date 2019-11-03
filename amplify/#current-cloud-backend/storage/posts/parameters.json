@@ -1,0 +1,7 @@
+{
+    "tableName": "posts",
+    "partitionKeyName": "user",
+    "partitionKeyType": "S",
+    "sortKeyName": "date",
+    "sortKeyType": "S"
+}
